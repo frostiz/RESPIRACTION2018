@@ -88,7 +88,7 @@ export default class Questions extends React.Component {
                 </View>
                 </View>
                 <View style={style.bottomButton}>
-                    <Button title='Valider' onPress={() => this.nextPage()}/>
+                    <Button title='Valider' onPress={() => Actions.pa_end()}/>
                 </View>
             </View>
         )
