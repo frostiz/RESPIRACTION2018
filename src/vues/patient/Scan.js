@@ -114,7 +114,7 @@ export default class Scan extends React.Component {
                 </View>
                 <View style={style.addMedic}>
                     <View style={style.medicField}>
-                        <TextField label="Entrez le nom de vos médicaments" value={this.state.inputMedic} onChangeText={(input) => this.setState({inputMedic: input})} />
+                        <TextField label="Entrez le nom de vos médicaments" baseColor={'white'} value={this.state.inputMedic} onChangeText={(input) => this.setState({inputMedic: input})} />
                     </View>
                     <View style={style.medicButton}>
                         <RaisedTextButton onPress={() => this.addMedic(this.state.inputMedic)} title='ok' color={TextField.defaultProps.tintColor} titleColor='white' />

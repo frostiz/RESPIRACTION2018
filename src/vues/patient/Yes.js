@@ -16,17 +16,24 @@ export default class Two extends React.Component {
     }
     render () {
         return (
-            <View style={style.container} >
-                <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
-                    <Text style={{color: "white"}}> Vous êtes éligible </Text>
+            <View style={style.container}>
+                <View style={style.column}>
+                    <View>
+                        <Text style={{color: "white", textAlign: 'center', fontSize: 26}}>Vous êtes éligible </Text>
+                    </View>
+                    <View style={{width: '100%'}}>
+                        <View style={{paddingTop: 30}}>
+                            <RaisedTextButton onPress={() => this.goToPage()} title='Chercher autour de moi' color={TextField.defaultProps.tintColor} titleColor='white' />
+                        </View>
+                        <View style={{paddingTop: 30, justifyContent: 'center', alignItems: 'center'}}>
+                            <Text style={{color: "white", textAlign: 'center', fontSize: 18, padding: 4, borderWidth: 1, borderColor: "white", borderRadius: 10, width: 50}}>ou</Text>
+                        </View>
+                        <View>
+                            <TextField label="Entrez votre ville" baseColor={'white'} value={this.state.inputCity} onChangeText={(input) => this.setState({inputCity: input})} />
+                        </View>
+                    </View>
                 </View>
-                <View style={style.medicField}>
-                    <TextField label="Entrez votre ville" value={this.state.inputCity} onChangeText={(input) => this.setState({inputCity: input})} />
-                </View>
-                <View style={style.medicButton}>
-                    <RaisedTextButton onPress={() => this.goToPage()} title='Géolocalise moi' color={TextField.defaultProps.tintColor} titleColor='white' />
-                </View>
-            <View style={style.bottomButton}>
+                <View style={style.bottomButton}>
                     <Button title='Valider' onPress={() => this.goToPage()}/>
                 </View>
             </View>
@@ -36,14 +43,16 @@ export default class Two extends React.Component {
 
 const style = StyleSheet.create({
     container: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
         flex: 1,
-        backgroundColor: '#00A1AB'
+        backgroundColor: "#00A1AB"
     },
-    medicField: {
-        padding: 20,
-    },
-    medicButton: {
-        padding: 50,
+    column: {
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     bottomButton: {
         width: '100%',

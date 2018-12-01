@@ -5,7 +5,7 @@ import { Text, View } from "react-native";
 
 export default class Two extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
         };
     }

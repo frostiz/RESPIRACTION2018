@@ -17,35 +17,41 @@ export default class One extends React.Component {
     }
     render () {
         return (
-            <View style={{flex:1, backgroundColor: '#00A1AB'}}>
-                <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50 }}>
-                    <Text style={{color: "white"}}> Depuis quand prenez vous votre traitement ?</Text>
+            <View style={style.container}>
+                <View style={style.column}>
+                    <View>
+                        <Text style={{textAlign: 'center', color: "white"}}> Depuis quand prenez vous votre traitement ?</Text>
+                    </View>
+                    <View style={{width: 200}}>
+                        <View style={{paddingTop: 15, justifyContent: 'center'}}>
+                            <CheckBox
+                                onClick={()=>{
+                                    this.setState({
+                                        isChecked:!this.state.isChecked
+                                    })
+                                }}
+                                isChecked={this.state.isChecked}
+                                rightText={"6 mois ou plus"}
+                                rightTextStyle={{color: "white"}}
+                                checkBoxColor={'white'}
+                            />
+                        </View>
+                        <View style={{paddingTop: 15}}>
+                            <CheckBox
+                                onClick={()=>{
+                                    this.setState({
+                                        isCheckedTwo:!this.state.isCheckedTwo
+                                    })
+                                }}
+                                isCheckedTwo={this.state.isCheckedTwo}
+                                rightText={"Moins de 6 mois"}
+                                rightTextStyle={{color: "white"}}
+                                checkBoxColor={'white'}
+                            />
+                        </View>
+                    </View>
                 </View>
-                <View>
-                    <CheckBox
-                        style={{flex: 1, padding: 100, paddingTop: 80}}
-                        onClick={()=>{
-                            this.setState({
-                                isChecked:!this.state.isChecked
-                            })
-                        }}
-                        isChecked={this.state.isChecked}
-                        leftText={"6 mois ou plus"}
-                        leftTextStyle={{color: "white"}}
-                    />
-                    <CheckBox
-                        style={{flex: 1, padding: 100, paddingTop: 80}}
-                        onClick={()=>{
-                            this.setState({
-                                isCheckedTwo:!this.state.isCheckedTwo
-                            })
-                        }}
-                        isCheckedTwo={this.state.isCheckedTwo}
-                        leftText={"Moins de 6 mois"}
-                        leftTextStyle={{color: "white"}}
-                    />
-                </View>
-                <View style={styles.bottomButton}>
+                <View style={style.bottomButton}>
                     <Button title='Valider' onPress={() => this.goToPage()}/>
                 </View>
             </View>
@@ -53,7 +59,15 @@ export default class One extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
+    container: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        backgroundColor: "#00A1AB"
+    },
     bottomButton: {
         width: '100%',
         paddingLeft: 20,

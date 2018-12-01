@@ -24,7 +24,7 @@ export default class Two extends React.Component {
                            source={{uri: 'http://img.20mn.fr/lYrLCO3kTEi5ot_CZWPAuA/561x360_localisation-rue-stations-lille'}}/>
                 </View>
                 <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                    <Text style={{color:"white", borderWidth: 1, borderColor: "white", marginTop: -50, marginBottom: 20, textAlign: 'center'}}> Pharmacie De la croix {"\n"} 3 rue Alexandre Dumas {"\n"} 59000 Lille </Text>
+                    <Text style={{color:"white", borderWidth: 1, borderColor: "white", borderRadius: 5, marginTop: -50, marginBottom: 20, textAlign: 'center', padding: 3}}> Pharmacie De la croix {"\n"} 3 rue Alexandre Dumas {"\n"} 59000 Lille </Text>
                 </View>
                 <View style={style.reservationOneButton}>
                     <Button title='Samedi 8 / 12 à 10h30' onPress={() => this.goToPage()}/>
