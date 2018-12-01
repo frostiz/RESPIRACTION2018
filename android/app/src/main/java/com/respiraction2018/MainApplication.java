@@ -8,6 +8,7 @@ import com.github.yamill.orientation.OrientationPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.corbt.keepawake.KCKeepAwakePackage;
 import com.brentvatne.react.ReactVideoPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -33,6 +34,8 @@ public class MainApplication extends Application implements ReactApplication {
             new VectorIconsPackage(),
             new KCKeepAwakePackage(),
             new ReactVideoPackage()
+          new MainReactPackage(),
+            new RNCameraPackage()
       );
     }
 
