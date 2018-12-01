@@ -16,7 +16,7 @@ export default class Two extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: '#80D0D0', }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
-                    <Text style={{color:"white", fontSize: 28, justifyContent: 'center', alignItems: 'center'}}> Pharmacie la plus proche </Text>
+                    <Text style={{color:"white", fontSize: 24, justifyContent: 'center', alignItems: 'center'}}> Pharmacie la plus proche </Text>
                 </View>
                 <View>
                     <Image resizeMode="contain"

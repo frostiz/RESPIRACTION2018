@@ -15,10 +15,10 @@ export default class Questions extends React.Component {
         return (
             <View style={style.container}>
                 <View>
-                    <Text style={{color:"white", textAlign: 'center', paddingBottom: 50}}>Question 1</Text>
+                    <Text style={{color:"white", textAlign: 'center', paddingBottom: 50, fontSize: 22, paddingTop: 20}}>Question 1</Text>
                 </View>
                 <View>
-                    <Text style={{color:"white", textAlign: 'center'}}>Au cours des 4 dernières semaines, {'\n'} votre astmme vous a t-il gêné dans{'\n'} vos activités au travail, à l'école / université ou chez vous ?</Text>
+                    <Text style={{color:"white", textAlign: 'center', fontSize: 18, paddingBottom: 20}}>Au cours des 4 dernières semaines, {'\n'} votre astmme vous a t-il gêné dans{'\n'} vos activités au travail, à l'école / université ou chez vous ?</Text>
                 </View>
                 <View style={{alignContent:'center'}}>
                 <View>
@@ -30,7 +30,7 @@ export default class Questions extends React.Component {
                     }}
                     isChecked={this.state.isChecked}
                     rightText={"Tout le temps"}
-                    rightTextStyle={{color: "white"}}
+                    rightTextStyle={{color: "white", fontSize: 16, paddingTop: 10}}
                     checkBoxColor={'white'}
                 />
                 </View>
@@ -43,7 +43,7 @@ export default class Questions extends React.Component {
                         }}
                         isCheckedTwo={this.state.isCheckedTwo}
                         rightText={"La plupart du temps"}
-                        rightTextStyle={{color: "white"}}
+                        rightTextStyle={{color: "white", fontSize: 16, paddingTop: 10}}
                         checkBoxColor={'white'}
                     />
                 </View>
@@ -56,7 +56,7 @@ export default class Questions extends React.Component {
                         }}
                         isCheckedTwo={this.state.isCheckedTwo}
                         rightText={"Quelques fois"}
-                        rightTextStyle={{color: "white"}}
+                        rightTextStyle={{color: "white", fontSize: 16, paddingTop: 10}}
                         checkBoxColor={'white'}
                     />
                 </View>
@@ -69,7 +69,7 @@ export default class Questions extends React.Component {
                         }}
                         isCheckedTwo={this.state.isCheckedTwo}
                         rightText={"Rarement"}
-                        rightTextStyle={{color: "white"}}
+                        rightTextStyle={{color: "white", fontSize: 16, paddingTop: 10}}
                         checkBoxColor={'white'}
                     />
                 </View>
@@ -82,7 +82,7 @@ export default class Questions extends React.Component {
                         }}
                         isCheckedTwo={this.state.isCheckedTwo}
                         rightText={"Jamais"}
-                        rightTextStyle={{color: "white"}}
+                        rightTextStyle={{color: "white", fontSize: 16, paddingTop: 10}}
                         checkBoxColor={'white'}
                     />
                 </View>
