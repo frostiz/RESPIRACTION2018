@@ -18,7 +18,7 @@ export default class Two extends React.Component {
         return (
             <View style={style.container} >
                 <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
-                    <Text> Vous êtes éligible </Text>
+                    <Text style={{color: "white"}}> Vous êtes éligible </Text>
                 </View>
                 <View style={style.medicField}>
                     <TextField label="Entrez votre ville" value={this.state.inputCity} onChangeText={(input) => this.setState({inputCity: input})} />

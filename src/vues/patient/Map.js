@@ -15,8 +15,8 @@ export default class Two extends React.Component {
     render () {
         return (
             <View style={{ flex: 1, backgroundColor: '#00A1AB', }}>
-                <View>
-                    <Text> Votre localisation </Text>
+                <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
+                    <Text style={{color:"white"}}> Votre localisation </Text>
                 </View>
                 <View>
                     <Image resizeMode="contain"
