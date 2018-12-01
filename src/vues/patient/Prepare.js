@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Button } from "react-native";
 import { Actions } from 'react-native-router-flux';
 
 export default class Prepare extends React.Component {
