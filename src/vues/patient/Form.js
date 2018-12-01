@@ -58,7 +58,8 @@ const style = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 10,
-        flex: 1
+        flex: 1,
+        backgroundColor: '#00A1AB'
     },
     bottomButton: {
         position: 'absolute',

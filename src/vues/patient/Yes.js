@@ -37,6 +37,7 @@ export default class Two extends React.Component {
 const style = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#00A1AB'
     },
     medicField: {
         padding: 20,

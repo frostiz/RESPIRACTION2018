@@ -11,7 +11,7 @@ export default class One extends React.Component {
     render () {
         return (
             <View style={style.container}>
-                <Text> Video page</Text>
+                <Text style={{color: 'white'}}> Video page</Text>
                 <Image
                     resizeMode="contain"
                     style={{width: Dimensions.get("window").width, height: 100}}
@@ -30,7 +30,8 @@ const style = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 10,
-        flex: 1
+        flex: 1,
+        backgroundColor: '#00A1AB'
     },
     bottomButton: {
         position: 'absolute',

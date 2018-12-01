@@ -14,7 +14,7 @@ export default class Two extends React.Component {
     }
     render () {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor: '#00A1AB', }}>
                 <View>
                     <Text> Votre localisation </Text>
                 </View>

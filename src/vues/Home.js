@@ -14,7 +14,6 @@ export default class Home extends React.Component {
         if (value === 'pharmacien') {
             Actions.ph_home();
         } else if (value === 'patient') {
-            //Actions.pa_scan();
             Actions.pa_home();
         }
     }
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue'
     },
     patientContainer: {
-        backgroundColor: 'red'
+        backgroundColor: '#00A1AB'
     },
     pharmaText: {
         color: 'white',
