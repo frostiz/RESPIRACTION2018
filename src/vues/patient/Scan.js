@@ -10,7 +10,7 @@ export default class Scan extends React.Component {
         let datas_cip;
         return datas_cip = [
             {
-                cip: '3400938627847',
+                cip: '3400938627947',
                 name: 'Ramipril'
             },
             {
@@ -89,7 +89,7 @@ export default class Scan extends React.Component {
     }
 
     nextPage() {
-        Actions.check();
+        Actions.pa_check();
     }
 
     render () {
@@ -162,6 +162,6 @@ const style = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         position: 'absolute',
-        bottom: 20
+        bottom: 10
     }
 });
