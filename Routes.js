@@ -16,18 +16,18 @@ import Map from "./src/vues/patient/Map";
 const Routes = () => (
     <Router>
         <Scene key="root">
-            <Scene key="home" component={Home} title="Home page" hideNavBar={true} initial={true} />
-            <Scene key="pa_check" component={Check} title="Check page" />
-            <Scene key="pa_yes" component={Yes} title = "Location page"/>
+            <Scene key="home" component={Home} title="Home" hideNavBar={true} initial={true} />
+            <Scene key="pa_check" component={Check} title="Traitement" />
+            <Scene key="pa_yes" component={Yes} title = "Êtes vous éligible ?"/>
             <Scene key="pa_no" component={No} title = "No page"/>
             <Scene key="pa_home" component={PatientHome} title="Patient home page" hideNavBar={true} />
-            <Scene key="pa_scan" component={PatientScan} title="Patient scan medics page" />
-            <Scene key="pa_form" component={PatientForm} title="Patient form"/>
-            <Scene key="pa_prepare" component={PatientPrepare} title={"Patient prepare"} />
-            <Scene key="pa_questions" component={PatientQuestions} title={"Patient questions"} />
-            <Scene key="pa_end" component={PatientEnd} title={"Patient end"} />
+            <Scene key="pa_scan" component={PatientScan} title="Mon traitement" />
+            <Scene key="pa_form" component={PatientForm} title="Confirmation"/>
+            <Scene key="pa_prepare" component={PatientPrepare} title={"Préparation"} />
+            <Scene key="pa_questions" component={PatientQuestions} title={"Questionnaire"} />
+            <Scene key="pa_end" component={PatientEnd} title={"Merci !"} />
             <Scene key="ph_home" component={PharmaHome} title="Pharma home page"/>
-            <Scene key="pa_map" component={Map} title = "Map page"/>
+            <Scene key="pa_map" component={Map} title = "Autour de moi"/>
         </Scene>
     </Router>
 );
