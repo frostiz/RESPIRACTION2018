@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import {Text, View, StyleSheet, Button} from "react-native";
 import { Actions } from 'react-native-router-flux';
 import CheckBox from "react-native-check-box";
 
@@ -7,7 +7,7 @@ export default class Questions extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isCheckedTwo: false
+            isChecked: false
         };
     }
 
@@ -25,10 +25,10 @@ export default class Questions extends React.Component {
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                            isCheckedTwo:!this.state.isCheckedTwo
+                            isChecked:!this.state.isChecked
                         })
                     }}
-                    isCheckedTwo={this.state.isCheckedTwo}
+                    isChecked={this.state.isChecked}
                     rightText={"Tout le temps"}
                     rightTextStyle={{color: "white"}}
                     checkBoxColor={'white'}
@@ -42,7 +42,7 @@ export default class Questions extends React.Component {
                             })
                         }}
                         isCheckedTwo={this.state.isCheckedTwo}
-                        rightText={"LA plupart du temps"}
+                        rightText={"La plupart du temps"}
                         rightTextStyle={{color: "white"}}
                         checkBoxColor={'white'}
                     />
@@ -87,6 +87,9 @@ export default class Questions extends React.Component {
                     />
                 </View>
                 </View>
+                <View style={style.bottomButton}>
+                    <Button title='Valider' onPress={() => this.nextPage()}/>
+                </View>
             </View>
         )
     }
@@ -96,5 +99,12 @@ const style = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#80D0D0'
+    },
+    bottomButton: {
+        width: '100%',
+        paddingLeft: 20,
+        paddingRight: 20,
+        position: 'absolute',
+        bottom: 10
     }
 });
