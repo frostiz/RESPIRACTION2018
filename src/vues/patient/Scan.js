@@ -138,14 +138,16 @@ const style = StyleSheet.create({
     },
     container: {
         flex: 1,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        backgroundColor: '#00A1AB'
     },
     qrcode: {
         paddingLeft: 20,
         paddingRight: 20,
     },
     textScan: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     },
     addMedic: {
         flex: 1,
@@ -153,7 +155,8 @@ const style = StyleSheet.create({
         paddingRight: 20,
         flexDirection: 'column'
     },
-    medicField: {},
+    medicField: {
+    },
     medicButton: {
         paddingBottom: 10
     },
