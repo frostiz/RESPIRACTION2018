@@ -11,14 +11,25 @@ export default class Prepare extends React.Component {
         Actions.pa_questions();
     }
     no () {
-        Actions.end();
+        Actions.pa_end();
     }
     render () {
         return (
             <View style={style.container}>
-                <Text>Pour préparer au mieux ton entretien, souhaites tu répondres à un petit questionnaire ?</Text>
-                <Button title='Oui' onPress={() => this.yes()} />
-                <Button title='Non' onPress={() => this.no()} />
+                <View style={style.column}>
+                    <View>
+                        <Text style={{textAlign: 'center', color: 'white'}}>Pour préparer au mieux ton entretien, souhaites tu répondres à un petit questionnaire ?</Text>
+                    </View>
+                    <View style={{width: 100}}>
+                        <View style={{paddingTop: 15}}>
+                            <Button style={{}} title='Oui' onPress={() => this.yes()} />
+                        </View>
+                        <View style={{paddingTop: 15}}>
+                            <Button style={{}} title='Non' onPress={() => this.no()} />
+                        </View>
+
+                    </View>
+                </View>
             </View>
         )
     }
@@ -26,7 +37,14 @@ export default class Prepare extends React.Component {
 
 const style = StyleSheet.create({
     container: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
         flex: 1,
+        backgroundColor: "#00A1AB"
+    },
+    column: {
         alignItems: 'center',
         justifyContent: 'center'
     }
