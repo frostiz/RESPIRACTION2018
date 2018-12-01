@@ -3,6 +3,11 @@ package com.respiraction2018;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.github.yamill.orientation.OrientationPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.corbt.keepawake.KCKeepAwakePackage;
+import com.brentvatne.react.ReactVideoPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -23,6 +28,12 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+            new LinearGradientPackage(),
+            new OrientationPackage(),
+            new VectorIconsPackage(),
+            new KCKeepAwakePackage(),
+            new ReactVideoPackage()
           new MainReactPackage(),
             new RNCameraPackage()
       );
