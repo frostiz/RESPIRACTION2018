@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Dimensions } from "react-native";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import One from '../vues/One';
-import Two from '../vues/Two';
+import One from './patient/One';
+import Two from './pharma/Two';
 
 
 
