@@ -1,42 +1,66 @@
-import * as React from "react";
-import { Dimensions } from "react-native";
-import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import One from './patient/One';
-import Two from './pharma/Two';
-
-
+import React from 'react';
+import { Dimensions, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class Home extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            index: 0,
-            routes: [
-                { key: "one", title: "page one" },
-                { key: "two", title: "page two" },
-            ]
+
         };
     }
 
-    componentDidMount() {
+    setType(value) {
+        if (value === 'pharmacien') {
+            Actions.ph_home();
+        } else if (value === 'patient') {
+            Actions.pa_scan();//
+            //Actions.pa_home();
+        }
     }
+
     render() {
-        const OneRoute = () => (
-            <One />
-        );
-        const TwoRoute = () => (
-            <Two />
-        );
         return (
-            <TabView
-                navigationState={this.state}
-                renderScene={SceneMap({
-                    one: OneRoute,
-                    two: TwoRoute,
-                })}
-                onIndexChange={index => this.setState({ index })}
-                initialLayout={{ width: Dimensions.get("window").width, height: Dimensions.get("window").height }}
-            />
+            <View style={styles.row}>
+                <TouchableOpacity onPress={() => this.setType('pharmacien')}>
+                    <View style={[styles.column2, styles.pharmaContainer]}>
+                        <Text style={styles.pharmaText}>Pharmacien</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.setType('patient')}>
+                    <View style={[styles.column2, styles.patientContainer]}>
+                        <Text style={styles.patientText}>Patient</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    row: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    column2: {
+        width: Dimensions.get('window').width / 2,
+        height: Dimensions.get('window').height,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    pharmaContainer: {
+        backgroundColor: 'blue'
+    },
+    patientContainer: {
+        backgroundColor: 'red'
+    },
+    pharmaText: {
+        color: 'white',
+        textAlign: 'center'
+    },
+    patientText: {
+        color: 'white',
+        textAlign: 'center'
+    }
+});

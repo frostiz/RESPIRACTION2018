@@ -1,8 +1,11 @@
-import React from "react";
-import { Router, Scene } from "react-native-router-flux";
-import Home from "./src/vues/Home";
-//import Patient from "./src/vues/patient/Patient";
-//import Pharma from "./src/vues/pharma/Pharma";
+import React from 'react';
+import { Router, Scene } from 'react-native-router-flux';
+import Home from './src/vues/Home';
+import PatientHome from './src/vues/patient/Home';
+import PatientScan from './src/vues/patient/Scan';
+
+
+import PharmaHome from './src/vues/pharma/Home';
 //import Video from "./src/vues/patient/Video";
 //import Medicine from "./src/vues/patient/Medicine";
 //import Check from "./src/vues/patient/Check";
@@ -14,7 +17,11 @@ import Home from "./src/vues/Home";
 const Routes = () => (
     <Router>
         <Scene key="root">
-            <Scene key="home" component={Home} title="Home page" initial={true} />
+            <Scene key="home" component={Home} title="Home page" hideNavBar={true} initial={true} />
+            <Scene key="pa_home" component={PatientHome} title="Patient home page" hideNavBar={true} />
+            <Scene key="pa_scan" component={PatientScan} title="Patient scan medics page" hideNavBar={false} />
+
+            <Scene key="ph_home" component={PharmaHome} title="Pharma home page" hideNavBar={false} />
         </Scene>
     </Router>
 );

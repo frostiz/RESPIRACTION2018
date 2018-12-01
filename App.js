@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { AppRegistry, View } from "react-native";
+import { AppRegistry } from "react-native";
 import Routes from "./Routes.js";
-
-
 
 class App extends Component {
     render() {
-        return <Routes />;
+        return (<Routes />);
     }
 }
 export default App;
