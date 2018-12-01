@@ -1,11 +1,25 @@
 import React from 'react';
-import { Text, View, StyleSheet, Platform, Image, Dimensions, TouchableOpacity} from 'react-native';
+import { Text, View, StyleSheet, Platform, Image, Dimensions, TouchableOpacity, Button} from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import { RaisedTextButton } from 'react-native-material-buttons';
 import { BarCodeScanner, Permissions } from 'expo';
-
+import { Actions } from 'react-native-router-flux';
 
 export default class Scan extends React.Component {
+    getDataCip() {
+        let datas_cip;
+        return datas_cip = [
+            {
+                cip: '3400938627847',
+                name: 'Ramipril'
+            },
+            {
+                cip: '3400930059166',
+                name: 'Voriconazole'
+            }
+        ]
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -14,12 +28,6 @@ export default class Scan extends React.Component {
             lastScannedUrl: '',
             medics: []
         };
-        const datas_cip = [
-            {
-                cip: '3400938627847',
-                name: 'Ramipril'
-            }
-        ];
     }
 
     componentDidMount() {
@@ -33,12 +41,25 @@ export default class Scan extends React.Component {
         });
     };
 
+    findMedicName(datamatrix) {
+        let cip = datamatrix.slice(4, 17);
+        let array = this.getDataCip();
+        for (let i in array) {
+            if (array[i].cip === cip) {
+                return array[i].name;
+            }
+        }
+        return '';
+    }
+
     _handleBarCodeRead = result => {
         if (result.data !== this.state.lastScannedUrl) {
             this.setState({
                 lastScannedUrl: result.data,
                 scanning: false
             });
+            let name = this.findMedicName(result.data);
+            this.addMedic(name);
         }
     };
 
@@ -48,9 +69,9 @@ export default class Scan extends React.Component {
         });
     }
 
-    addMedic() {
+    addMedic(medic) {
         let tmp = this.state.medics;
-        tmp.push(this.state.inputMedic);
+        tmp.push(medic);
         this.setState({
             inputMedic: '',
             medics: tmp
@@ -65,6 +86,10 @@ export default class Scan extends React.Component {
                 </View>
             );
         });
+    }
+
+    nextPage() {
+        Actions.check();
     }
 
     render () {
@@ -92,17 +117,20 @@ export default class Scan extends React.Component {
                         <TextField label="Entrez le nom de vos médicaments" value={this.state.inputMedic} onChangeText={(input) => this.setState({inputMedic: input})} />
                     </View>
                     <View style={style.medicButton}>
-                        <RaisedTextButton onPress={() => this.addMedic()} title='ok' color={TextField.defaultProps.tintColor} titleColor='white' />
+                        <RaisedTextButton onPress={() => this.addMedic(this.state.inputMedic)} title='ok' color={TextField.defaultProps.tintColor} titleColor='white' />
                     </View>
                     <View>
                         {this.showMedics()}
                     </View>
                 </View>
+                <View style={style.bottomButton}>
+                    <Button title='Valider' onPress={() => this.nextPage()}/>
+                </View>
             </View>
         );
     }
 }
-//ii
+
 const style = StyleSheet.create({
     droidSafeArea: {
         flex: 1,
@@ -128,5 +156,12 @@ const style = StyleSheet.create({
     medicField: {},
     medicButton: {
         paddingBottom: 10
+    },
+    bottomButton: {
+        width: '100%',
+        paddingLeft: 20,
+        paddingRight: 20,
+        position: 'absolute',
+        bottom: 20
     }
 });
