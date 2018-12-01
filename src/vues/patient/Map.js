@@ -14,7 +14,7 @@ export default class Two extends React.Component {
     }
     render () {
         return (
-            <View style={{ flex: 1, backgroundColor: '#00A1AB', }}>
+            <View style={{ flex: 1, backgroundColor: '#80D0D0', }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
                     <Text style={{color:"white"}}> Pharmacie la plus proche </Text>
                 </View>

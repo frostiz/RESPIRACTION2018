@@ -10,9 +10,9 @@ export default class Home extends React.Component {
     }
     render () {
         return (
-            <View style={{flex: 1, backgroundColor: '#00A1AB'}}>
+            <View style={{flex: 1, backgroundColor: '#80D0D0'}}>
                 <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
-                    <Text style={{color: 'white'}}> Video page</Text>
+                    <Text style={{color: 'white'}}> L'entrentien pharmaceutique {'\n'} qu'est-ce que c'est ?</Text>
                 </View>
                 <View style={style.bottomButton}>
                     <Button title="Valider" onPress={() => Actions.pa_scan()} />

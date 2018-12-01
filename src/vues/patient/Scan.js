@@ -139,7 +139,7 @@ const style = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#00A1AB'
+        backgroundColor: '#80D0D0'
     },
     qrcode: {
         paddingLeft: 20,

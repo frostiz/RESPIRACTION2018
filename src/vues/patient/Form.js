@@ -70,7 +70,7 @@ const style = StyleSheet.create({
         paddingRight: 20,
         paddingTop: 10,
         flex: 1,
-        backgroundColor: '#00A1AB'
+        backgroundColor: '#80D0D0'
     },
     bottomButton: {
         position: 'absolute',

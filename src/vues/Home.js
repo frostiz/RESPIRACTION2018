@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     pharmaContainer: {
-        backgroundColor: 'blue'
+        backgroundColor: '#00A1AB'
     },
     patientContainer: {
-        backgroundColor: '#00A1AB'
+        backgroundColor: '#80D0D0'
     },
     pharmaText: {
         color: 'white',
