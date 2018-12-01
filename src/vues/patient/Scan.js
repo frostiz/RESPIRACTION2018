@@ -148,18 +148,13 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: "#00A1AB",
+        backgroundColor: '#80D0D0'
     },
     column: {
         //alignItems: 'center',
         //justifyContent: 'center',
         height: '100%'
     },
-    /*container: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#00A1AB'
-    },*/
     qrcode: {
         paddingLeft: 20,
         paddingRight: 20,
