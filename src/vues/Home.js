@@ -12,10 +12,11 @@ export default class Home extends React.Component {
 
     setType(value) {
         if (value === 'pharmacien') {
-            Actions.ph_home();
+            Actions.pa_form();
+            //Actions.ph_home();
         } else if (value === 'patient') {
-            Actions.pa_scan();//
-            //Actions.pa_home();
+            //Actions.pa_scan();
+            Actions.pa_home();
         }
     }
 
