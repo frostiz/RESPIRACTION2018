@@ -4,6 +4,10 @@ import Home from './src/vues/Home';
 import PatientHome from './src/vues/patient/Video';
 import PatientScan from './src/vues/patient/Scan';
 import PatientForm from './src/vues/patient/Form';
+import PatientPrepare from './src/vues/patient/Prepare';
+import PatientQuestions from './src/vues/patient/Questions';
+import PatientEnd from './src/vues/patient/End';
+
 import PharmaHome from './src/vues/pharma/Home';
 import Check from "./src/vues/patient/Check";
 import Yes from "./src/vues/patient/Yes";
@@ -20,6 +24,10 @@ const Routes = () => (
             <Scene key="pa_home" component={PatientHome} title="Patient home page" hideNavBar={true} />
             <Scene key="pa_scan" component={PatientScan} title="Patient scan medics page" hideNavBar={false} />
             <Scene key="pa_form" component={PatientForm} title="Patient form" hideNavBar={false} />
+            <Scene key="pa_prepare" component={PatientPrepare} title={"Patient prepare"} />
+            <Scene key="pa_questions" component={PatientQuestions} title={"Patient questions"} />
+            <Scene key="pa_end" component={PatientEnd} title={"Patient end"} />
+
             <Scene key="ph_home" component={PharmaHome} title="Pharma home page" hideNavBar={false} />
             <Scene key="pa_map" component={Map} title = "Map page"/>
         </Scene>

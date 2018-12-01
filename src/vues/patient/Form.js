@@ -23,7 +23,7 @@ export default class Form extends React.Component {
     }
 
     submit() {
-        //Actions.pa_prepare();
+        Actions.pa_prepare();
     }
 
     render () {
@@ -34,7 +34,7 @@ export default class Form extends React.Component {
                     <TextField label="Entrez votre nom" value={this.state.lastName} onChangeText={(input) => this.setState({lastName: input})} />
                     <TextField label="Entrez votre prénom" value={this.state.firstName} onChangeText={(input) => this.setState({fistName: input})} />
                     <TouchableOpacity onPress={this._showDateTimePicker}>
-                        <TextField label="Date de naissance" disabled={true}></TextField>
+                        <TextField label="Date de naissance" disabled={true}/>
                         <DateTimePicker
                             isVisible={this.state.isDateTimePickerVisible}
                             onConfirm={this._handleDatePicked}
