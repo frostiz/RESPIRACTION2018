@@ -20,10 +20,10 @@ export default class One extends React.Component {
             <View style={style.container}>
                 <View style={style.column}>
                     <View>
-                        <Text style={{textAlign: 'center', color: "white"}}> Depuis quand prenez vous votre traitement ?</Text>
+                        <Text style={{textAlign: 'center', color: "white", fontSize: 18}}> Depuis quand prenez vous votre traitement ?</Text>
                     </View>
                     <View style={{width: 200}}>
-                        <View style={{paddingTop: 15, justifyContent: 'center'}}>
+                        <View style={{paddingTop: 25, justifyContent: 'center'}}>
                             <CheckBox
                                 onClick={()=>{
                                     this.setState({
@@ -32,7 +32,7 @@ export default class One extends React.Component {
                                 }}
                                 isChecked={this.state.isChecked}
                                 rightText={"6 mois ou plus"}
-                                rightTextStyle={{color: "white"}}
+                                rightTextStyle={{color: "white", fontSize: 14}}
                                 checkBoxColor={'white'}
                             />
                         </View>
@@ -45,7 +45,7 @@ export default class One extends React.Component {
                                 }}
                                 isCheckedTwo={this.state.isCheckedTwo}
                                 rightText={"Moins de 6 mois"}
-                                rightTextStyle={{color: "white"}}
+                                rightTextStyle={{color: "white", fontSize: 14}}
                                 checkBoxColor={'white'}
                             />
                         </View>

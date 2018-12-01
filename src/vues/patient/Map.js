@@ -16,11 +16,11 @@ export default class Two extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: '#00A1AB', }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
-                    <Text style={{color:"white"}}> Pharmacie la plus proche </Text>
+                    <Text style={{color:"white", fontSize: 28, justifyContent: 'center', alignItems: 'center'}}> Pharmacie la plus proche </Text>
                 </View>
                 <View>
                     <Image resizeMode="contain"
-                           style={{width: Dimensions.get("window").width, height: Dimensions.get("window").height / 2}}
+                           style={{height: 360}}
                            source={{uri: 'http://img.20mn.fr/lYrLCO3kTEi5ot_CZWPAuA/561x360_localisation-rue-stations-lille'}}/>
                 </View>
                 <View style={{justifyContent: 'center', alignItems: 'center'}}>

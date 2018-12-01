@@ -34,7 +34,7 @@ export default class Form extends React.Component {
     render () {
         return (
             <View style={style.container}>
-                <Text style={{ color:"white" }}>Confirmez votre rendez-vous</Text>
+                <Text style={{ color:"white", fontSize: 22 }}>Confirmez votre rendez-vous</Text>
                 <View>
                     <TextField label="Entrez votre nom" baseColor={'white'} value={this.state.lastName} onChangeText={(input) => this.setState({lastName: input})} />
                     <TextField label="Entrez votre prénom" baseColor={'white'} value={this.state.firstName} onChangeText={(input) => this.setState({fistName: input})} />

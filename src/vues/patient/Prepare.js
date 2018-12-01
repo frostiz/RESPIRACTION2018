@@ -18,7 +18,7 @@ export default class Prepare extends React.Component {
             <View style={style.container}>
                 <View style={style.column}>
                     <View>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Pour préparer au mieux ton entretien, souhaites tu répondres à un petit questionnaire ?</Text>
+                        <Text style={{textAlign: 'center', color: 'white', fontSize: 18}}>Pour préparer au mieux ton entretien, souhaites tu répondres à un petit questionnaire ?</Text>
                     </View>
                     <View style={{width: 100}}>
                         <View style={{paddingTop: 15}}>

@@ -11,11 +11,11 @@ export default class Scan extends React.Component {
         return datas_cip = [
             {
                 cip: '3400938627947',
-                name: 'Ramipril'
+                name: 'SERETIDE'
             },
             {
                 cip: '3400930059166',
-                name: 'Voriconazole'
+                name: 'VENTOLINE'
             }
         ]
     }
@@ -82,7 +82,7 @@ export default class Scan extends React.Component {
         return this.state.medics.map(function(medic, index) {
             return (
                 <View key={medic + index}>
-                    <Text>- {medic}</Text>
+                    <Text style={{color: 'white'}}>- {medic}</Text>
                 </View>
             );
         });
@@ -104,23 +104,29 @@ export default class Scan extends React.Component {
                 />
             );
         return (
-            <View style={style.container} >
-                <View style={style.qrcode}>
-                    <TouchableOpacity onPress={() => this.startScanner()}>
-                        <Image style={{width: Dimensions.get('window').width - 40 }} source={require('../../../assets/patient/qrcode-2.png')} resizeMode="contain" />
-                    </TouchableOpacity>
-                    <Text style={style.textScan}>Veuillez scanner les médicaments de votre traitement ou indiquez les ci-dessous</Text>
-                    {this.state.lastScannedUrl !== '' && <Text style={{textAlign: 'center'}}>Scanned {this.state.lastScannedUrl}</Text>}
-                </View>
-                <View style={style.addMedic}>
-                    <View style={style.medicField}>
-                        <TextField label="Entrez le nom de vos médicaments" baseColor={'white'} value={this.state.inputMedic} onChangeText={(input) => this.setState({inputMedic: input})} />
-                    </View>
-                    <View style={style.medicButton}>
-                        <RaisedTextButton onPress={() => this.addMedic(this.state.inputMedic)} title='ok' color={TextField.defaultProps.tintColor} titleColor='white' />
-                    </View>
+            <View style={style.container}>
+                <View style={style.column}>
                     <View>
-                        {this.showMedics()}
+                        <Text style={{textAlign: 'center', color: 'white', fontSize: 28, paddingTop: 30}}>Scannez vos médicaments</Text>
+                    </View>
+                    <View style={{width: '100%'}}>
+                        <View style={{paddingTop: 15}}>
+                            <TouchableOpacity onPress={() => this.startScanner()}>
+                                <Image style={{width: Dimensions.get('window').width - 40 }} source={require('../../../assets/patient/qr-code-3.png')} resizeMode="contain" />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{paddingTop: 30, justifyContent: 'center', alignItems: 'center'}}>
+                            <Text style={{color: "white", textAlign: 'center', fontSize: 18, padding: 4, borderWidth: 1, borderColor: "white", borderRadius: 10, width: 50}}>ou</Text>
+                        </View>
+                        <View style={{paddingTop: 0}}>
+                            <TextField label="Entrez le nom de vos médicaments" baseColor={'white'} value={this.state.inputMedic} onChangeText={(input) => this.setState({inputMedic: input})} />
+                        </View>
+                        <View style={style.medicButton}>
+                            <RaisedTextButton onPress={() => this.addMedic(this.state.inputMedic)} title='ok' color={TextField.defaultProps.tintColor} titleColor='white' />
+                        </View>
+                        {this.state.medics.length > 0 && <View style={{padding: 4, borderWidth: 1, borderColor: "white", borderRadius: 10}}>
+                            {this.showMedics()}
+                        </View>}
                     </View>
                 </View>
                 <View style={style.bottomButton}>
@@ -137,10 +143,23 @@ const style = StyleSheet.create({
         paddingTop: Platform.OS === 'android' ? 25 : 0
     },
     container: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        backgroundColor: "#00A1AB",
+    },
+    column: {
+        //alignItems: 'center',
+        //justifyContent: 'center',
+        height: '100%'
+    },
+    /*container: {
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#00A1AB'
-    },
+    },*/
     qrcode: {
         paddingLeft: 20,
         paddingRight: 20,
