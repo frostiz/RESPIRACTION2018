@@ -18,16 +18,12 @@ export default class Prepare extends React.Component {
             <View style={style.container}>
                 <View style={style.column}>
                     <View>
-                        <Text style={{textAlign: 'center', color: 'white', fontSize: 18}}>Pour préparer au mieux ton entretien, souhaites tu répondres à un petit questionnaire ?</Text>
+                        <Text style={{textAlign: 'center', color: 'white', fontSize: 24}}>Pour préparer au mieux ton entretien, réponds à ces 10 petites questions</Text>
                     </View>
                     <View style={{width: 100}}>
                         <View style={{paddingTop: 15}}>
                             <Button style={{}} title='Oui' onPress={() => this.yes()} />
                         </View>
-                        <View style={{paddingTop: 15}}>
-                            <Button style={{}} title='Non' onPress={() => this.no()} />
-                        </View>
-
                     </View>
                 </View>
             </View>

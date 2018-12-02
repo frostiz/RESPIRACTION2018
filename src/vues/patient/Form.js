@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Button, Platform } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import { RaisedTextButton } from 'react-native-material-buttons';
 import { Actions } from 'react-native-router-flux';
@@ -33,8 +33,8 @@ export default class Form extends React.Component {
 
     render () {
         return (
-            <View style={style.container}>
-                <Text style={{ color:"white", fontSize: 22 }}>Confirmez votre rendez-vous</Text>
+            <View style={[style.container, style.droidSafeArea]}>
+                <Text style={{ color:"white", fontSize: 24, paddingTop: 35, textAlign: 'center'}}>Confirmez votre rendez-vous</Text>
                 <View>
                     <TextField label="Entrez votre nom" baseColor={'white'} value={this.state.lastName} onChangeText={(input) => this.setState({lastName: input})} />
                     <TextField label="Entrez votre prénom" baseColor={'white'} value={this.state.firstName} onChangeText={(input) => this.setState({fistName: input})} />
@@ -54,10 +54,10 @@ export default class Form extends React.Component {
                     </TouchableOpacity>
                     <TextField label="Entrez votre régime d'affiliation" baseColor={'white'} value={this.state.regime} onChangeText={(input) => this.setState({regime: input})} />
                     <TextField label="Entrez votre adresse" baseColor={'white'} value={this.state.adresse} onChangeText={(input) => this.setState({adresse: input})} />
-                    <TextField label="Entrez votre numéro de téléphone" baseColor={'white'} value={this.state.tel} onChangeText={(input) => this.setState({tel: input})} />
+                    <TextField label="Entrez votre numéro de téléphone (facultatif)" baseColor={'white'} value={this.state.tel} onChangeText={(input) => this.setState({tel: input})} />
                 </View>
                 <View style={style.bottomButton}>
-                    <Button onPress={() => this.submit()} title='ok' color={TextField.defaultProps.tintColor} titleColor='white' />
+                    <Button onPress={() => this.submit()} title='valider' color={TextField.defaultProps.tintColor} titleColor='white' />
                 </View>
             </View>
         )
@@ -65,6 +65,10 @@ export default class Form extends React.Component {
 }//kninn
 
 const style = StyleSheet.create({
+    droidSafeArea: {
+        flex: 1,
+        paddingTop: Platform.OS === 'android' ? 25 : 0
+    },
     container: {
         paddingLeft: 20,
         paddingRight: 20,

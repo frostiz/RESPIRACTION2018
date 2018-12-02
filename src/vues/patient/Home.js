@@ -12,7 +12,7 @@ export default class Home extends React.Component {
         return (
             <View style={{flex: 1, backgroundColor: '#80D0D0'}}>
                 <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 50}}>
-                    <Text style={{color: 'white', fontSize: 18, textAlign: 'center'}}> L'entrentien pharmaceutique {'\n'} qu'est-ce que c'est ?</Text>
+                    <Text style={{color: 'white', fontSize: 24, textAlign: 'center'}}> L'entretien pharmaceutique, {'\n'} qu'est-ce que c'est ?</Text>
                 </View>
                 <View style={{paddingTop: 15, alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: Dimensions.get('window').width - 40 }} source={require('../../../assets/patient/player.png')} resizeMode="contain" />

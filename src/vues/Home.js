@@ -56,10 +56,12 @@ const styles = StyleSheet.create({
     },
     pharmaText: {
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: 24
     },
     patientText: {
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: 24
     }
 });

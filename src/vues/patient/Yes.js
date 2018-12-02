@@ -19,14 +19,14 @@ export default class Two extends React.Component {
             <View style={style.container}>
                 <View style={style.column}>
                     <View>
-                        <Text style={{color: "white", textAlign: 'center', fontSize: 26}}>Vous êtes éligible </Text>
+                        <Text style={{color: "white", textAlign: 'center', fontSize: 24}}>Vous êtes éligible,{'\n'} choisissez votre pharmacie</Text>
                     </View>
                     <View style={{width: '100%'}}>
                         <View style={{paddingTop: 30}}>
                             <RaisedTextButton onPress={() => this.goToPage()} title='Chercher autour de moi' color={TextField.defaultProps.tintColor} titleColor='white' />
                         </View>
                         <View style={{paddingTop: 30, justifyContent: 'center', alignItems: 'center'}}>
-                            <Text style={{color: "white", textAlign: 'center', fontSize: 18, padding: 4, borderWidth: 1, borderColor: "white", borderRadius: 10, width: 50}}>ou</Text>
+                            <Text style={{color: "white", textAlign: 'center', fontSize: 24, padding: 4, borderWidth: 1, borderColor: "white", borderRadius: 10, width: 50}}>ou</Text>
                         </View>
                         <View>
                             <TextField label="Entrez votre ville" baseColor={'white'} value={this.state.inputCity} onChangeText={(input) => this.setState({inputCity: input})} />

@@ -104,16 +104,16 @@ export default class Scan extends React.Component {
                 />
             );
         return (
-            <View style={style.container}>
+            <View style={[style.container, style.droidSafeArea]}>
                 <View style={style.column}>
-                    <View>
-                        <Text style={{textAlign: 'center', color: 'white', fontSize: 28, paddingTop: 30}}>Scannez vos médicaments</Text>
-                    </View>
                     <View style={{width: '100%'}}>
-                        <View style={{paddingTop: 15}}>
+                        <View style={{paddingTop: 55}}>
                             <TouchableOpacity onPress={() => this.startScanner()}>
                                 <Image style={{width: Dimensions.get('window').width - 40 }} source={require('../../../assets/patient/qr-code-3.png')} resizeMode="contain" />
                             </TouchableOpacity>
+                        </View>
+                        <View>
+                            <Text style={{textAlign: 'center', color: 'white', fontSize: 18, paddingTop: 30}}>Scannez vos médicaments</Text>
                         </View>
                         <View style={{paddingTop: 30, justifyContent: 'center', alignItems: 'center'}}>
                             <Text style={{color: "white", textAlign: 'center', fontSize: 18, padding: 4, borderWidth: 1, borderColor: "white", borderRadius: 10, width: 50}}>ou</Text>

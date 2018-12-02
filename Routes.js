@@ -17,17 +17,17 @@ const Routes = () => (
     <Router>
         <Scene key="root">
             <Scene key="home" component={Home} title="Home" hideNavBar={true} initial={true} />
-            <Scene key="pa_check" component={Check} title="Traitement" />
-            <Scene key="pa_yes" component={Yes} title = "Êtes vous éligible ?"/>
+            <Scene key="pa_check" component={Check} title="Traitement" hideNavBar={true}/>
+            <Scene key="pa_yes" component={Yes} title = "Êtes vous éligible ?" hideNavBar={true}/>
             <Scene key="pa_no" component={No} title = "No page"/>
             <Scene key="pa_home" component={PatientHome} title="Patient home page" hideNavBar={true} />
-            <Scene key="pa_scan" component={PatientScan} title="Mon traitement" />
-            <Scene key="pa_form" component={PatientForm} title="Confirmation"/>
-            <Scene key="pa_prepare" component={PatientPrepare} title={"Préparation"} />
-            <Scene key="pa_questions" component={PatientQuestions} title={"Questionnaire"} />
-            <Scene key="pa_end" component={PatientEnd} title={"Merci !"} />
+            <Scene key="pa_scan" component={PatientScan} title="Mon traitement" hideNavBar={true}/>
+            <Scene key="pa_form" component={PatientForm} title="Confirmation" hideNavBar={true}/>
+            <Scene key="pa_prepare" component={PatientPrepare} title={"Préparation"} hideNavBar={true}/>
+            <Scene key="pa_questions" component={PatientQuestions} title={"Questionnaire"} hideNavBar={true}/>
+            <Scene key="pa_end" component={PatientEnd} title={"Merci !"} hideNavBar={true}/>
             <Scene key="ph_home" component={PharmaHome} title="Pharma home page"/>
-            <Scene key="pa_map" component={Map} title = "Autour de moi"/>
+            <Scene key="pa_map" component={Map} title = "Autour de moi" hideNavBar={true}/>
         </Scene>
     </Router>
 );
